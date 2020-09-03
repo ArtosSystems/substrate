@@ -106,6 +106,8 @@ where
 			enable_color: false,
 			prefix: String::new(),
 		},
+		avn_port: Default::default(),
+		ethereum_node_url: Default::default(),
 	};
 
 	Ok(config)

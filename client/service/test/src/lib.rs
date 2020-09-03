@@ -269,6 +269,8 @@ fn node_config<G: RuntimeGenesis + 'static, E: ChainSpecExtension + Clone + 'sta
 		announce_block: true,
 		base_path: Some(BasePath::new(root)),
 		informant_output_format: Default::default(),
+		avn_port: Default::default(),
+		ethereum_node_url: Default::default(),
 	}
 }
 

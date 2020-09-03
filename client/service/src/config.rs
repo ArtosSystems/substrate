@@ -111,6 +111,10 @@ pub struct Configuration {
 	pub base_path: Option<BasePath>,
 	/// Configuration of the output format that the informant uses.
 	pub informant_output_format: sc_informant::OutputFormat,
+	/// AvN port number
+	pub avn_port: Option<String>,
+	/// Ethereum node Url
+	pub ethereum_node_url: Option<String>,
 }
 
 /// Type for tasks spawned by the executor.

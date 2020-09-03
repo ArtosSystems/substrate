@@ -389,6 +389,20 @@ pub trait CliConfiguration<DCV: DefaultConfigurationValues = ()>: Sized {
 		Ok(Default::default())
 	}
 
+	/// Returns the avn port number as string
+	///
+	/// By default this is None.
+	fn avn_port(&self) -> Result<Option<String>> {
+		Ok(Default::default())
+	}
+
+	/// Returns the ethereum node URL as string
+	///
+	/// By default this is None.
+	fn ethereum_node_url(&self) -> Result<Option<String>> {
+		Ok(Default::default())
+	}
+
 	/// Get the development key seed from the current object
 	///
 	/// By default this is `None`.
@@ -505,6 +519,8 @@ pub trait CliConfiguration<DCV: DefaultConfigurationValues = ()>: Sized {
 			offchain_worker: self.offchain_worker(&role)?,
 			force_authoring: self.force_authoring()?,
 			disable_grandpa: self.disable_grandpa()?,
+			avn_port: self.avn_port()?,
+			ethereum_node_url: self.ethereum_node_url()?,
 			dev_key_seed: self.dev_key_seed(is_dev)?,
 			tracing_targets: self.tracing_targets()?,
 			tracing_receiver: self.tracing_receiver()?,
