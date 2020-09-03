@@ -97,6 +97,8 @@ where
 		wasm_method: Default::default(),
 		max_runtime_instances: 8,
 		announce_block: true,
+		avn_port: Default::default(),
+		ethereum_node_url: Default::default(),
 	};
 
 	Ok(config)

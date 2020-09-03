@@ -210,6 +210,8 @@ fn node_config<G: RuntimeGenesis + 'static, E: ChainSpecExtension + Clone + 'sta
 		tracing_receiver: Default::default(),
 		max_runtime_instances: 8,
 		announce_block: true,
+		avn_port: Default::default(),
+		ethereum_node_url: Default::default(),
 	}
 }
 

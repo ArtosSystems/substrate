@@ -68,6 +68,14 @@ pub struct RunCmd {
 	#[structopt(long)]
 	pub no_grandpa: bool,
 
+	/// AvN server port number
+	#[structopt(long = "avn-port", value_name = "AvN PORT")]
+	pub avn_port: Option<String>,
+
+	/// URL for connecting with an ethereum node
+	#[structopt(long = "ethereum-node-url", value_name = "ETH URL")]
+	pub eth_node_url: Option<String>,
+
 	/// Experimental: Run in light client mode.
 	#[structopt(long = "light", conflicts_with = "sentry")]
 	pub light: bool,
@@ -325,6 +333,14 @@ impl CliConfiguration for RunCmd {
 				None
 			}
 		}))
+	}
+
+	fn avn_port(&self) -> Result<Option<String>> {
+		Ok(self.avn_port.clone())
+	}
+
+	fn ethereum_node_url(&self) -> Result<Option<String>> {
+		Ok(self.eth_node_url.clone())
 	}
 
 	fn telemetry_endpoints(

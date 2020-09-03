@@ -102,6 +102,10 @@ pub struct Configuration {
 	pub max_runtime_instances: usize,
 	/// Announce block automatically after they have been imported
 	pub announce_block: bool,
+	/// AvN port number
+	pub avn_port: Option<String>,
+	/// Ethereum node Url
+	pub ethereum_node_url: Option<String>,
 }
 
 /// Type for tasks spawned by the executor.

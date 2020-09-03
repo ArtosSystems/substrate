@@ -366,6 +366,18 @@ macro_rules! substrate_cli_subcommands {
 				}
 			}
 
+			fn avn_port(&self) -> $crate::Result<::std::option::Option<String>> {
+				match self {
+					$($enum::$variant(cmd) => cmd.avn_port()),*
+				}
+			}
+
+			fn ethereum_node_url(&self) -> $crate::Result<::std::option::Option<String>> {
+				match self {
+					$($enum::$variant(cmd) => cmd.ethereum_node_url()),*
+				}
+			}
+
 			fn dev_key_seed(&self, is_dev: bool) -> $crate::Result<::std::option::Option<String>> {
 				match self {
 					$($enum::$variant(cmd) => cmd.dev_key_seed(is_dev)),*
