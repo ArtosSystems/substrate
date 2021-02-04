@@ -191,20 +191,20 @@ impl Parse for INposInput {
 
 		let min_inflation = parse_field::<keyword::min_inflation>(&args_input, Bounds {
 			min: 0,
-			min_strict: true,
+			min_strict: false,
 			max: 1_000_000,
 			max_strict: false,
 		})?;
 		<syn::Token![,]>::parse(&args_input)?;
 		let max_inflation = parse_field::<keyword::max_inflation>(&args_input, Bounds {
 			min: min_inflation,
-			min_strict: true,
+			min_strict: false,
 			max: 1_000_000,
 			max_strict: false,
 		})?;
 		<syn::Token![,]>::parse(&args_input)?;
 		let ideal_stake = parse_field::<keyword::ideal_stake>(&args_input, Bounds {
-			min: 0_100_000,
+			min: 0,
 			min_strict: false,
 			max: 0_900_000,
 			max_strict: false,
