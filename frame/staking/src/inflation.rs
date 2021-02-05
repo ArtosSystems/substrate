@@ -43,7 +43,7 @@ pub fn compute_total_payout<N>(
 		npos_token_staked,
 		total_tokens.clone(),
 	);
-	let maximum = portion * (yearly_inflation.maximum * total_tokens);
+	let maximum = u64 = 0;
 	(payout, maximum)
 }
 
