@@ -261,7 +261,8 @@ impl INPoS {
 	fn from_input(input: &INposInput) -> Self {
 		INPoS {
 			i_0: input.min_inflation,
-			i_ideal: 0,
+			i_ideal: (input.max_inflation as u64 * MILLION as u64 / input.ideal_stake as u64)
+				.try_into().unwrap(),
 			i_ideal_times_x_ideal: input.max_inflation,
 			x_ideal: input.ideal_stake,
 			d: input.falloff,
