@@ -43,7 +43,7 @@ pub fn compute_total_payout<N>(
 		npos_token_staked,
 		total_tokens.clone(),
 	);
-	let maximum = u64 = 0;
+	let maximum: u64 = 0;
 	(payout, maximum)
 }
 
